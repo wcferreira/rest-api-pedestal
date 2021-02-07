@@ -1,14 +1,14 @@
 (ns playground.core
   (:require [io.pedestal.http :as http]
             [io.pedestal.http.body-params :as body-param]
-            [playground.db :as db]))
+            [playground.handlers :as h]))
 
 (def routes
-  #{["/merchants"     :get    db/list-all-merchants  :route-name :get-merchants]
-    ["/merchants/:id" :get    db/list-merchant-by-id :route-name :get-merchant-by-id]
-    ["/merchants"     :post   db/create-new-merchant :route-name :post-merchants]
-    ["/merchants/:id" :put    db/update-merchant     :route-name :put-merchant]
-    ["/merchants/:id" :delete db/delete-merchant     :route-name :delete-merchant]})
+  #{["/merchants"     :get    h/list-all-merchants  :route-name :get-merchants]
+    ["/merchants/:id" :get    h/list-merchant-by-id :route-name :get-merchant-by-id]
+    ["/merchants"     :post   h/create-new-merchant :route-name :post-merchants]
+    ["/merchants/:id" :put    h/update-merchant     :route-name :put-merchant]
+    ["/merchants/:id" :delete h/delete-merchant     :route-name :delete-merchant]})
 
 (def service-map
   (-> {::http/routes routes
