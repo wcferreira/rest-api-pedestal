@@ -1,0 +1,5 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        org.clojure/tools.namespace {:mvn/version "0.2.11"}
+        io.pedestal/pedestal.service {:mvn/version "0.5.8"}
+        io.pedestal/pedestal.jetty {:mvn/version "0.5.8"}}}
