@@ -13,7 +13,8 @@
 (def service-map
   (-> {::http/routes routes
        ::http/port 8000
-       ::http/type :jetty}
+       ::http/type :jetty
+       ::http/join? false}
       http/default-interceptors
       (update ::http/interceptors conj (body-param/body-params))))
 
@@ -29,3 +30,5 @@
 (defn halt []
   (http/stop @server))
 
+(defn create-server []
+  (http/create-server service-map))

@@ -31,9 +31,7 @@
   (let [id (get-in request [:path-params :id])
         data (:json-params request)]
     (db/updates id data)
-    (-> {}
-        http/json-response
-        (assoc :status 204))))
+    (http/json-response data)))
 
 (defn delete-merchant [request]
   (prn "Deleting merchant")

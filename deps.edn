@@ -2,4 +2,8 @@
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/tools.namespace {:mvn/version "0.2.11"}
         io.pedestal/pedestal.service {:mvn/version "0.5.8"}
-        io.pedestal/pedestal.jetty {:mvn/version "0.5.8"}}}
+        io.pedestal/pedestal.jetty {:mvn/version "0.5.8"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {cheshire/cheshire {:mvn/version "5.10.0"}
+                               nubank/matcher-combinators {:mvn/version "3.1.4"}
+                               org.clojure/test.check {:mvn/version "1.1.0"}}}}}

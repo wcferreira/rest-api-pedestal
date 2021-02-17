@@ -1,1 +1,9 @@
+.cpcache/
+.nrepl-port
 .idea/
+target/
+/pom*
+.clj-kondo/.cache/
+*.iml
+**/.DS_Store
+.calva
